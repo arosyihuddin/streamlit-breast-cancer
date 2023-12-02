@@ -66,42 +66,43 @@ if selected == "Training Data":
         
 # ===================== Halaman Klasifikasi =====================
 elif selected == "Klasifikasi":
+    st.caption("Model ini menggunakan 200 N Tree sebagai model predict")
     col1, col2, col3 = st.columns(3)
     with col1:
-        radius_m = st.slider("Raidus Mean", 0.0, 1000.0, value=0.2)
-        texture_m = st.slider("Texture Mean", 0.0, 1000.0, value=0.2)
-        primeter_m = st.slider("Primeter Mean", 0.0, 1000.0, value=0.2)
-        area_m = st.slider("Area Mean", 0.0, 1000.0, value=0.2)
-        smoothness_m = st.slider("Smoothness Mean", 0.0, 1000.0, value=0.2)
-        compactness_m = st.slider("Compactness Mean", 0.0, 1000.0, value=0.2)
-        covacity_m = st.slider("Covacity Mean", 0.0, 1000.0, value=0.2)
-        convave_m = st.slider("Convave Point Mean", 0.0, 1000.0, value=0.2)
-        simmetry_m = st.slider("Simmetry Mean", 0.0, 1000.0, value=0.2)
-        fractal_m = st.slider("Fractal Dimention Mean", 0.0, 1000.0, value=0.2)
+        radius_m = st.slider("Raidus Mean", 0.0, 20.590000, value=10.0)
+        texture_m = st.slider("Texture Mean", 0.0, 29.810000, value=20.0)
+        primeter_m = st.slider("Primeter Mean", 0.0, 137.800000, value=40.0)
+        area_m = st.slider("Area Mean", 0.0, 1320.000000, value=100.0)
+        smoothness_m = st.slider("Smoothness Mean", 0.0, 0.125700, value=0.02)
+        compactness_m = st.slider("Compactness Mean", 0.0, 0.202200, value=0.1)
+        covacity_m = st.slider("Covacity Mean", 0.0, 0.254500, value=0.1)
+        convave_m = st.slider("Convave Point Mean", 0.0, 0.125900, value=0.01)
+        simmetry_m = st.slider("Simmetry Mean", 0.0, 0.245900, value=0.02)
+        fractal_m = st.slider("Fractal Dimention Mean", 0.0, 0.078180, value=0.003)
     
     with col2:
-        radius_se = st.slider("Raidus Se", 0.0, 1000.0, value=0.2)
-        texture_se = st.slider("Texture Se", 0.0, 1000.0, value=0.2)
-        primeter_se = st.slider("Primeter Se", 0.0, 1000.0, value=0.2)
-        area_se = st.slider("Area Se", 0.0, 1000.0, value=0.2)
-        smoothness_se = st.slider("Smoothness Se", 0.0, 1000.0, value=0.2)
-        compactness_se = st.slider("Compactness Se", 0.0, 1000.0, value=0.2)
-        covacity_se = st.slider("Covacity Se", 0.0, 1000.0, value=0.2)
-        convave_se = st.slider("Convave Point Se", 0.0, 1000.0, value=0.2)
-        simmetry_se = st.slider("Simmetry Se", 0.0, 1000.0, value=0.2)
-        fractal_se = st.slider("Fractal Dimention Se", 0.0, 1000.0, value=0.2)
+        radius_se = st.slider("Raidus Se", 0.0, 0.747400, value=0.2)
+        texture_se = st.slider("Texture Se", 0.0, 2.426000, value=0.2)
+        primeter_se = st.slider("Primeter Se", 0.0, 5.216000, value=0.2)
+        area_se = st.slider("Area Se", 0.0, 83.500000, value=20.0)
+        smoothness_se = st.slider("Smoothness Se", 0.0, 0.012150, value=0.002)
+        compactness_se = st.slider("Compactness Se", 0.0, 0.055920, value=0.002)
+        covacity_se = st.slider("Covacity Se", 0.0, 0.081580, value=0.02)
+        convave_se = st.slider("Convave Point Se", 0.0, 0.022580, value=0.002)
+        simmetry_se = st.slider("Simmetry Se", 0.0, 0.035040, value=0.002)
+        fractal_se = st.slider("Fractal Dimention Se", 0.0, 0.008015, value=0.0002,  step=0.00001)
     
     with col3:
-        radius_worst = st.slider("Raidus Worst", 0.0, 1000.0, value=0.2)
-        texture_worst = st.slider("Texture Worst", 0.0, 1000.0, value=0.2)
-        primeter_worst = st.slider("Primeter Worst", 0.0, 1000.0, value=0.2)
-        area_worst = st.slider("Area Worst", 0.0, 1000.0, value=0.2)
-        smoothness_worst = st.slider("Smoothness Worst", 0.0, 1000.0, value=0.2)
-        compactness_worst = st.slider("Compactness Worst", 0.0, 1000.0, value=0.2)
-        covacity_worst = st.slider("Covacity Worst", 0.0, 1000.0, value=0.2)
-        convave_worst = st.slider("Convave Point Worst", 0.0, 1000.0, value=0.2)
-        simmetry_worst = st.slider("Simmetry Worst", 0.0, 1000.0, value=0.2)
-        fractal_worst = st.slider("Fractal Dimention Worst", 0.0, 1000.0, value=0.2)
+        radius_worst = st.slider("Raidus Worst", 0.0, 24.560000, value=5.0)
+        texture_worst = st.slider("Texture Worst", 0.0, 40.540000, value=10.0)
+        primeter_worst = st.slider("Primeter Worst", 0.0, 166.400000, value=20.0)
+        area_worst = st.slider("Area Worst", 0.0, 1872.000000, value=200.0)
+        smoothness_worst = st.slider("Smoothness Worst", 0.0, 0.187800, value=0.01)
+        compactness_worst = st.slider("Compactness Worst", 0.0, 0.611000, value=0.2)
+        covacity_worst = st.slider("Covacity Worst", 0.0, 0.772700, value=0.2)
+        convave_worst = st.slider("Convave Point Worst", 0.0, 0.254300, value=0.02)
+        simmetry_worst = st.slider("Simmetry Worst", 0.0, 0.412800, value=0.2)
+        fractal_worst = st.slider("Fractal Dimention Worst", 0.0, 0.120500, value=0.02)
     
     model = joblib.load("resources/model rf.pkl")
     input_data  = [
@@ -142,8 +143,10 @@ elif selected == "Klasifikasi":
         ]
 
 
-    prediction = model.predict(input_data)
+    predict = st.button("Predict")
     st.header("Prediction", divider='rainbow')
-    diagnosis = ['Ganas', 'Jinak']
-    st.write(f"Hasil Prediksi : {diagnosis[prediction[0]]}")
+    if predict:
+        prediction = model.predict(input_data)
+        diagnosis = ['Ganas', 'Jinak']
+        st.write(f"Hasil Prediksi : {diagnosis[prediction[0]]}")
     
