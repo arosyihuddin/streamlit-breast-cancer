@@ -150,6 +150,7 @@ elif selected == "Klasifikasi":
         scaler = joblib.load("resources/minmaxScaler.pkl")
         data_scaler = scaler.transform(new_dataa)
         prediction = model.predict(data_scaler)
+        st.write(prediction)
         diagnosis = ['Jinak', 'Ganas']
         st.write(f"Hasil Prediksi : {diagnosis[prediction[0]]}")
     
