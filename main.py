@@ -146,7 +146,9 @@ elif selected == "Klasifikasi":
     predict = st.button("Predict")
     st.header("Prediction", divider='rainbow')
     if predict:
-        prediction = model.predict(input_data)
+        scaler = joblib.load("resources/minmaxScaler.pkl")
+        data_scaler = scaler.transform(input_data)
+        prediction = model.predict(data_scaler)
         diagnosis = ['Ganas', 'Jinak']
         st.write(f"Hasil Prediksi : {diagnosis[prediction[0]]}")
     
