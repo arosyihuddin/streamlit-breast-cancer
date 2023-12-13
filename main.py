@@ -141,16 +141,13 @@ elif selected == "Klasifikasi":
             fractal_worst
             ]
         ]
-    new_dataa = [[1.825e+01, 1.998e+01, 1.196e+02, 1.040e+03, 9.463e-02, 1.090e-01, 1.127e-01, 7.400e-02, 1.794e-01,5.742e-02, 4.467e-01, 7.732e-01, 3.180e+00, 5.391e+01, 4.314e-03, 1.382e-02, 2.254e-02, 1.039e-02, 1.369e-02, 2.179e-03, 2.288e+01, 2.766e+01, 1.532e+02, 1.606e+03, 1.442e-01, 2.576e-01, 3.784e-01, 1.932e-01, 3.063e-01, 8.368e-02]]
-
 
     predict = st.button("Predict")
     st.header("Prediction", divider='rainbow')
     if predict:
         scaler = joblib.load("resources/minmaxScaler.pkl")
-        data_scaler = scaler.transform(new_dataa)
+        data_scaler = scaler.transform(input_data)
         prediction = model.predict(data_scaler)
-        st.write(prediction)
         diagnosis = ['Jinak', 'Ganas']
         st.write(f"Hasil Prediksi : {diagnosis[prediction[0]]}")
     
